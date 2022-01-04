@@ -131,7 +131,6 @@ module qdma_subsystem #(
   output                         m_axis_qdma_cpl_ctrl_user_trig,
   output                   [2:0] m_axis_qdma_cpl_ctrl_col_idx,
   output                   [2:0] m_axis_qdma_cpl_ctrl_err_idx,
-  output                         m_axis_qdma_cpl_ctrl_no_wrb_marker,
   input                          m_axis_qdma_cpl_tready,
 `endif
 
@@ -184,7 +183,6 @@ module qdma_subsystem #(
   wire         axis_qdma_cpl_ctrl_user_trig;
   wire   [2:0] axis_qdma_cpl_ctrl_col_idx;
   wire   [2:0] axis_qdma_cpl_ctrl_err_idx;
-  wire         axis_qdma_cpl_ctrl_no_wrb_marker;
   wire         axis_qdma_cpl_tready;
 
   wire         h2c_byp_out_vld;
@@ -345,7 +343,6 @@ module qdma_subsystem #(
     .s_axis_cpl_ctrl_user_trig       (axis_qdma_cpl_ctrl_user_trig),
     .s_axis_cpl_ctrl_col_idx         (axis_qdma_cpl_ctrl_col_idx),
     .s_axis_cpl_ctrl_err_idx         (axis_qdma_cpl_ctrl_err_idx),
-    .s_axis_cpl_ctrl_no_wrb_marker   (axis_qdma_cpl_ctrl_no_wrb_marker),
     .s_axis_cpl_tready               (axis_qdma_cpl_tready),
 
     .h2c_byp_out_vld                 (h2c_byp_out_vld),
@@ -455,7 +452,6 @@ module qdma_subsystem #(
   assign m_axis_qdma_cpl_ctrl_user_trig       = axis_qdma_cpl_ctrl_user_trig;
   assign m_axis_qdma_cpl_ctrl_col_idx         = axis_qdma_cpl_ctrl_col_idx;
   assign m_axis_qdma_cpl_ctrl_err_idx         = axis_qdma_cpl_ctrl_err_idx;
-  assign m_axis_qdma_cpl_ctrl_no_wrb_marker   = axis_qdma_cpl_ctrl_no_wrb_marker;
   assign axis_qdma_cpl_tready                 = m_axis_qdma_cpl_tready;
 `endif
 
@@ -513,7 +509,6 @@ module qdma_subsystem #(
     assign axis_qdma_cpl_ctrl_user_trig       = 1'b0;
     assign axis_qdma_cpl_ctrl_col_idx         = 0;
     assign axis_qdma_cpl_ctrl_err_idx         = 0;
-    assign axis_qdma_cpl_ctrl_no_wrb_marker   = 1'b0;
 
     // Terminate H2C and C2H interfaces of the shell
     assign m_axis_h2c_tvalid     = 1'b0;
@@ -730,7 +725,6 @@ module qdma_subsystem #(
       .m_axis_qdma_cpl_ctrl_user_trig       (axis_qdma_cpl_ctrl_user_trig),
       .m_axis_qdma_cpl_ctrl_col_idx         (axis_qdma_cpl_ctrl_col_idx),
       .m_axis_qdma_cpl_ctrl_err_idx         (axis_qdma_cpl_ctrl_err_idx),
-      .m_axis_qdma_cpl_ctrl_no_wrb_marker   (axis_qdma_cpl_ctrl_no_wrb_marker),
       .m_axis_qdma_cpl_tready               (axis_qdma_cpl_tready),
 
       .c2h_status_valid                     (c2h_status_valid),

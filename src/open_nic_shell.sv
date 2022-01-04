@@ -102,7 +102,6 @@ module open_nic_shell #(
   output                         m_axis_qdma_cpl_sim_ctrl_user_trig,
   output                   [2:0] m_axis_qdma_cpl_sim_ctrl_col_idx,
   output                   [2:0] m_axis_qdma_cpl_sim_ctrl_err_idx,
-  output                         m_axis_qdma_cpl_sim_ctrl_no_wrb_marker,
   input                          m_axis_qdma_cpl_sim_tready,
 
   output     [NUM_CMAC_PORT-1:0] m_axis_cmac_tx_sim_tvalid,
@@ -645,7 +644,6 @@ module open_nic_shell #(
     .m_axis_qdma_cpl_ctrl_user_trig       (m_axis_qdma_cpl_sim_ctrl_user_trig),
     .m_axis_qdma_cpl_ctrl_col_idx         (m_axis_qdma_cpl_sim_ctrl_col_idx),
     .m_axis_qdma_cpl_ctrl_err_idx         (m_axis_qdma_cpl_sim_ctrl_err_idx),
-    .m_axis_qdma_cpl_ctrl_no_wrb_marker   (m_axis_qdma_cpl_sim_ctrl_no_wrb_marker),
     .m_axis_qdma_cpl_tready               (m_axis_qdma_cpl_sim_tready),
 `endif
 

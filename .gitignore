@@ -5,3 +5,4 @@ vivado*.str
 
 # Ignore .Xil directory
 .Xil
+build

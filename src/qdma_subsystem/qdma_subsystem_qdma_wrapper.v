@@ -79,7 +79,6 @@ module qdma_subsystem_qdma_wrapper (
   input          s_axis_cpl_ctrl_user_trig,
   input    [2:0] s_axis_cpl_ctrl_col_idx,
   input    [2:0] s_axis_cpl_ctrl_err_idx,
-  input          s_axis_cpl_ctrl_no_wrb_marker,
   output         s_axis_cpl_tready,
 
   output         h2c_byp_out_vld,
@@ -421,7 +420,6 @@ module qdma_subsystem_qdma_wrapper (
     .s_axis_c2h_cmpt_ctrl_user_trig       (s_axis_cpl_ctrl_user_trig),
     .s_axis_c2h_cmpt_ctrl_col_idx         (s_axis_cpl_ctrl_col_idx),
     .s_axis_c2h_cmpt_ctrl_err_idx         (s_axis_cpl_ctrl_err_idx),
-    .s_axis_c2h_cmpt_ctrl_no_wrb_marker   (s_axis_cpl_ctrl_no_wrb_marker),
     .s_axis_c2h_cmpt_tready               (s_axis_cpl_tready),
 
     .axis_c2h_status_drop                 (),     // output wire axis_c2h_status_drop

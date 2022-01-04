@@ -22,8 +22,9 @@ set_property -dict {
     CONFIG.pl_link_cap_max_link_width {X16}
     CONFIG.pl_link_cap_max_link_speed {8.0_GT/s}
     CONFIG.en_transceiver_status_ports {false}
-    CONFIG.dsc_byp_mode {Descriptor_bypass_and_internal}
     CONFIG.testname {st}
+    CONFIG.dsc_bypass_rd {true}
+    CONFIG.dsc_bypass_wr {true}
     CONFIG.pf1_pciebar2axibar_2 {0x0000000000000000}
     CONFIG.pf2_pciebar2axibar_2 {0x0000000000000000}
     CONFIG.pf3_pciebar2axibar_2 {0x0000000000000000}
@@ -46,5 +47,22 @@ set_property -dict {
     CONFIG.PCIE_BOARD_INTERFACE {pci_express_x16}
     CONFIG.xlnx_ref_board {AU250}
 } [get_ips $qdma]
+# new
+# CONFIG.dsc_byp_mode {Descriptor_bypass_and_internal}
+# old
+# CONFIG.free_run_freq {100_MHz}
+# CONFIG.axi_data_width {512_bit}
+# CONFIG.axisten_freq {250}
+# CONFIG.en_gt_selection {true}
+# CONFIG.coreclk_freq {500}
+# CONFIG.dsc_bypass_rd {true}
+# CONFIG.pf0_device_id {903F}
+# CONFIG.pf1_device_id {913F}
+# CONFIG.pf2_device_id {923F}
+# CONFIG.pf3_device_id {933F}
+# CONFIG.PF0_SRIOV_VF_DEVICE_ID {A03F}
+# CONFIG.PF1_SRIOV_VF_DEVICE_ID {A13F}
+# CONFIG.PF2_SRIOV_VF_DEVICE_ID {A23F}
+# CONFIG.PF3_SRIOV_VF_DEVICE_ID {A33F}
 set_property CONFIG.tl_pf_enable_reg $num_phys_func [get_ips $qdma]
 set_property CONFIG.num_queues $num_queue [get_ips $qdma]

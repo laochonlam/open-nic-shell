@@ -52,7 +52,6 @@ module qdma_subsystem_c2h #(
   output                        m_axis_qdma_cpl_ctrl_user_trig,
   output                  [2:0] m_axis_qdma_cpl_ctrl_col_idx,
   output                  [2:0] m_axis_qdma_cpl_ctrl_err_idx,
-  output                        m_axis_qdma_cpl_ctrl_no_wrb_marker,
   input                         m_axis_qdma_cpl_tready,
 
   output                        c2h_status_valid,
@@ -282,7 +281,6 @@ module qdma_subsystem_c2h #(
   assign m_axis_qdma_cpl_tdata[26:16]         = cpl_fifo_dout[42:32];
   assign m_axis_qdma_cpl_tdata[15:0]          = 0;
 
-  assign m_axis_qdma_cpl_ctrl_no_wrb_marker   = 1'b0;
   assign m_axis_qdma_cpl_ctrl_col_idx         = 0;
   assign m_axis_qdma_cpl_ctrl_err_idx         = 0;
   assign m_axis_qdma_cpl_ctrl_qid             = cpl_fifo_dout[42:32];
