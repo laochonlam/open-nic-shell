@@ -15,6 +15,8 @@
 // limitations under the License.
 //
 // *************************************************************************
+
+// Inside the user plugin
 `include "open_nic_shell_macros.vh"
 `timescale 1ns/1ps
 module p2p_250mhz #(
@@ -36,7 +38,7 @@ module p2p_250mhz #(
   output             [31:0] s_axil_rdata,
   output              [1:0] s_axil_rresp,
   input                     s_axil_rready,
-
+  // Host to Card and Send out
   input      [NUM_INTF-1:0] s_axis_qdma_h2c_tvalid,
   input  [512*NUM_INTF-1:0] s_axis_qdma_h2c_tdata,
   input   [64*NUM_INTF-1:0] s_axis_qdma_h2c_tkeep,
@@ -45,7 +47,7 @@ module p2p_250mhz #(
   input   [16*NUM_INTF-1:0] s_axis_qdma_h2c_tuser_src,
   input   [16*NUM_INTF-1:0] s_axis_qdma_h2c_tuser_dst,
   output     [NUM_INTF-1:0] s_axis_qdma_h2c_tready,
-
+  // Card to Host and Receive
   output     [NUM_INTF-1:0] m_axis_qdma_c2h_tvalid,
   output [512*NUM_INTF-1:0] m_axis_qdma_c2h_tdata,
   output  [64*NUM_INTF-1:0] m_axis_qdma_c2h_tkeep,
@@ -54,7 +56,7 @@ module p2p_250mhz #(
   output  [16*NUM_INTF-1:0] m_axis_qdma_c2h_tuser_src,
   output  [16*NUM_INTF-1:0] m_axis_qdma_c2h_tuser_dst,
   input      [NUM_INTF-1:0] m_axis_qdma_c2h_tready,
-
+  // Host to Card and Send out
   output     [NUM_INTF-1:0] m_axis_adap_tx_250mhz_tvalid,
   output [512*NUM_INTF-1:0] m_axis_adap_tx_250mhz_tdata,
   output  [64*NUM_INTF-1:0] m_axis_adap_tx_250mhz_tkeep,
@@ -63,7 +65,7 @@ module p2p_250mhz #(
   output  [16*NUM_INTF-1:0] m_axis_adap_tx_250mhz_tuser_src,
   output  [16*NUM_INTF-1:0] m_axis_adap_tx_250mhz_tuser_dst,
   input      [NUM_INTF-1:0] m_axis_adap_tx_250mhz_tready,
-
+  // Card to Host and Receive
   input      [NUM_INTF-1:0] s_axis_adap_rx_250mhz_tvalid,
   input  [512*NUM_INTF-1:0] s_axis_adap_rx_250mhz_tdata,
   input   [64*NUM_INTF-1:0] s_axis_adap_rx_250mhz_tkeep,

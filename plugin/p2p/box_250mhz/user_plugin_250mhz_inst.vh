@@ -15,6 +15,8 @@
 // limitations under the License.
 //
 // *************************************************************************
+
+// How the user plugin react with outside
 initial begin
   if (USE_PHYS_FUNC == 0) begin
     $fatal("No implementation for USE_PHYS_FUNC = %d", 0);

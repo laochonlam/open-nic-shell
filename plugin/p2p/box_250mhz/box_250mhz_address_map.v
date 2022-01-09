@@ -26,6 +26,8 @@
 // --------------------------------------------------
 //   0x1000   |  0x1FFF   |  Dummy
 // --------------------------------------------------
+
+// The description of address map
 `timescale 1ns/1ps
 module box_250mhz_address_map (
   input         s_axil_awvalid,
@@ -173,7 +175,7 @@ module box_250mhz_address_map (
     .s_axi_rresp   (s_axil_rresp),
     .s_axi_rvalid  (s_axil_rvalid),
     .s_axi_rready  (s_axil_rready),
-
+    // This one already include two addr
     .m_axi_awaddr  (axil_awaddr),
     .m_axi_awprot  (),
     .m_axi_awvalid (axil_awvalid),

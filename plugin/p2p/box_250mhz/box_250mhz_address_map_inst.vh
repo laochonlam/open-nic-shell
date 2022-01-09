@@ -15,6 +15,8 @@
 // limitations under the License.
 //
 // *************************************************************************
+
+// The connection of address map and dummy register
 wire        axil_p2p_awvalid;
 wire [31:0] axil_p2p_awaddr;
 wire        axil_p2p_awready;
