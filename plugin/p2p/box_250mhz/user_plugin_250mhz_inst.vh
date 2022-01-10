@@ -61,7 +61,7 @@ p2p_250mhz #(
   .s_axis_qdma_h2c_tuser_src        (s_axis_qdma_h2c_tuser_src),
   .s_axis_qdma_h2c_tuser_dst        (s_axis_qdma_h2c_tuser_dst),
   .s_axis_qdma_h2c_tready           (s_axis_qdma_h2c_tready),
-
+  // Box -> Host
   .m_axis_qdma_c2h_tvalid           (m_axis_qdma_c2h_tvalid),
   .m_axis_qdma_c2h_tdata            (m_axis_qdma_c2h_tdata),
   .m_axis_qdma_c2h_tkeep            (m_axis_qdma_c2h_tkeep),
@@ -79,7 +79,7 @@ p2p_250mhz #(
   .m_axis_adap_tx_250mhz_tuser_src  (m_axis_adap_tx_250mhz_tuser_src),
   .m_axis_adap_tx_250mhz_tuser_dst  (m_axis_adap_tx_250mhz_tuser_dst),
   .m_axis_adap_tx_250mhz_tready     (m_axis_adap_tx_250mhz_tready),
-
+  // Packet Receive -> Box
   .s_axis_adap_rx_250mhz_tvalid     (s_axis_adap_rx_250mhz_tvalid),
   .s_axis_adap_rx_250mhz_tdata      (s_axis_adap_rx_250mhz_tdata),
   .s_axis_adap_rx_250mhz_tkeep      (s_axis_adap_rx_250mhz_tkeep),
